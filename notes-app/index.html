@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Notes App (Offline, Markdown)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Notes</h1>
+    <input id="search" type="text" placeholder="Tìm ghi chú..." />
+    <div class="actions">
+      <button id="newNote">+ Ghi chú</button>
+      <button id="deleteNote" title="Xóa ghi chú hiện tại">🗑</button>
+      <button id="togglePreview" title="Bật/tắt xem Markdown">👁</button>
+    </div>
+  </header>
+
+  <main>
+    <aside>
+      <ul id="notesList"></ul>
+    </aside>
+
+    <section id="editor">
+      <input id="title" placeholder="Tiêu đề..." />
+      <textarea id="content" placeholder="Nội dung ..."></textarea>
+      <div id="preview" class="hidden"></div>
+    </section>
+  </main>
+
+  <footer>
+    <small>Offline • Lưu cục bộ bằng localStorage • Markdown cơ bản</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+:root{
+  --bg:#0f1220; --panel:#171a2b; --soft:#1f2340; --text:#e9ecff; --muted:#9aa3c7; --accent:#6bc36b; --danger:#ff6b6b;
+}
+*{box-sizing:border-box}
+body{margin:0; font-family:system-ui,Segoe UI,Roboto,Arial; color:var(--text); background:linear-gradient(180deg,#0f1220,#121633 30%,#0f1220)}
+header{
+  display:flex; gap:12px; align-items:center; padding:12px 16px; background:var(--panel); border-bottom:1px solid #262a4a; position:sticky; top:0; z-index:1;
+}
+h1{margin:0; font-size:18px}
+header input#search{
+  flex:1; background:var(--soft); color:var(--text); border:1px solid #2a2e52; border-radius:8px; padding:10px 12px;
+}
+.actions{display:flex; gap:8px}
+.actions button{
+  background:var(--soft); color:var(--text); border:1px solid #2a2e52; border-radius:8px; padding:8px 10px; cursor:pointer
+}
+.actions button#newNote{background:var(--accent); color:#0b1a0b; border:none}
+.actions button#deleteNote{background:var(--danger); color:#1a0b0b; border:none}
+
+main{display:grid; grid-template-columns:280px 1fr; min-height:calc(100vh - 96px)}
+aside{border-right:1px solid #262a4a; background:var(--panel); overflow:auto}
+#notesList{list-style:none; margin:0; padding:8px}
+#notesList li{
+  padding:10px 12px; margin:6px 0; border-radius:8px; background:var(--soft); cursor:pointer; border:1px solid #2a2e52;
+}
+#notesList li.active{outline:2px solid var(--accent)}
+#notesList small{display:block; color:var(--muted)}
+
+#editor{display:flex; flex-direction:column; gap:10px; padding:16px}
+#title{
+  font-size:18px; padding:10px 12px; border-radius:8px; background:var(--panel); color:var(--text); border:1px solid #2a2e52;
+}
+#content{
+  flex:1; min-height:320px; resize:vertical; padding:12px; border-radius:8px; background:var(--panel); color:var(--text); border:1px solid #2a2e52; line-height:1.5;
+}
+#preview{
+  flex:1; overflow:auto; padding:12px; border-radius:8px; background:#101326; border:1px solid #2a2e52;
+}
+.hidden{display:none}
+
+footer{padding:8px 16px; color:var(--muted); background:var(--panel); border-top:1px solid #262a4a}
+
+#preview h1,#preview h2,#preview h3{margin:14px 0 6px}
+#preview code{background:#22284a; padding:2px 6px; border-radius:6px}
+#preview pre{background:#0d1230; padding:12px; border-radius:8px; overflow:auto}
+#preview a{color:#7bd4ff}
+#preview ul{margin-left:20px}
+@media (max-width:900px){ main{grid-template-columns:1fr} aside{display:none} }
