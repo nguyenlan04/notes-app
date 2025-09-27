@@ -142,3 +142,16 @@ currentId = notes[0]?.id || null;
 if (currentId) openNote(currentId);
 renderList();
 
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/service-worker.js')  // Đảm bảo đường dẫn chính xác
+      .then(registration => {
+        console.log('Service Worker registered with scope: ', registration.scope);
+      })
+      .catch(error => {
+        console.log('Service Worker registration failed:', error);
+      });
+  });
+}
+
+
